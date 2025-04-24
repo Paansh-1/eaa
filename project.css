@@ -233,7 +233,8 @@ nav {
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 2rem; /* Spacing before sticky buttons */
+    margin-bottom: 2rem;
+    color: #edc01d;/* Spacing before sticky buttons */
 }
 
 /* --- Then vs Now Slider --- */
