@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganga Water Quality Mediator</title>
+    <link rel="stylesheet" href="project.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="Namami Gange Logo_English.jpg">
+                <span>Ganga Mediator</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About the Mission</a></li>
+                <li><a href="#then-now">Then vs Now</a></li>
+                <li><a href="#organizations">Organizations</a></li>
+                <li><a href="contri.html">Our Contribution</a></li>
+                <li><a href="assi.html">Project Assignments</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button id="login-btn" class="btn btn-secondary"> Sign In</button>
+                <a href="profile.html" id="profile-link" class="btn btn-secondary" style="display: none;">Profile</a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                 <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Clean Ganga: Our Collective Responsibility</h1>
+                <p>Join hands to monitor and restore the purity of our sacred river Ganga. Your participation matters.</p>
+                <div class="sticky-buttons-container">
+                    <a href="#join-mission" class="btn btn-primary btn-sticky">Join This Mission</a>
+                    <a href="#submit-report-section" class="btn btn-success btn-sticky">Reach Government / Submit Report</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About the Mission Section -->
+        <section id="about" class="content-section">
+            <h2>Our Mission: Namami Gange</h2>
+            <p>The Ganga river is not just a water body; it's a lifeline and a symbol of our cultural heritage. Decades of pollution have threatened its ecosystem and the health of millions. The Namami Gange Programme is an integrated conservation mission, approved as a 'Flagship Programme' by the Union Government to accomplish the twin objectives of effective abatement of pollution, conservation and rejuvenation of National River Ganga.</p>
+            <h3>Why Join Us?</h3>
+            <p>Your involvement is crucial. By reporting water quality observations or participating as a local testing organization, you become a vital link between the community and the government. Accurate, ground-level data helps authorities take targeted action. Be a part of the solution, ensure accountability, and help restore Maa Ganga to her pristine glory.</p>
+        </section>
+
+        <!-- Then vs Now Section -->
+        <section id="then-now" class="content-section bg-light">
+            <h2>Ganga: Then vs Now</h2>
+            <p>Witness the progress made through collective efforts and government initiatives.</p>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide">
+                        <img src="ganga-fb_1496991251_800x420.jpg" alt="Ganga - Then 1">
+                        <div class="caption">Ganga Ghat - Before Cleaning Initiatives</div>
+                    </div>
+                    <div class="slide">
+                        <img src="OIP (2).jpeg" alt="Ganga - Now 1">
+                        <div class="caption">Ganga Ghat - After Cleaning Efforts</div>
+                    </div>
+                    <div class="slide">
+                        <img src="Ganga-River-in-India-Source-Centre-for-Science-and-Environment-New-Delhi-October-2008_Q640.jpg"Ganga River - Then 2">
+                        <div class="caption">Polluted Stretch - Past Condition</div>
+                    </div>
+                     <div class="slide">
+                        <img src="R.jpeg" alt="Ganga River - Now 2">
+                        <div class="caption">Cleaner Stretch - Recent Condition</div>
+                    </div>
+                </div>
+                <button class="slider-btn prev-btn"><</button>
+                <button class="slider-btn next-btn">></button>
+            </div>
+        </section>
+
+         <!-- Organizations Section -->
+        <section id="organizations" class="content-section">
+             <h2 id="join-mission">For Local Testers & Organizations</h2>
+             <p>Are you a local group, NGO, or individual actively monitoring Ganga's water quality? We provide a platform to connect your valuable findings with government bodies.</p>
+             <p>Register your organization (or as an individual tester) to submit reports. We act as a mediator, ensuring your data, submitted with proper documentation via shared drive links, reaches the concerned authorities for verification and action.</p>
+             <p><em>Note: Account creation for organizations is simulated in this demo. Click 'Sign In' to simulate login.</em></p>
+             <button class="btn btn-primary" onclick="document.getElementById('login-btn').click();">Register / Sign In to Submit</button>
+        </section>
+
+        <!-- Report Submission Info Section (Conditional Display) -->
+        <section id="submit-report-section" class="content-section bg-light" style="display: none;">
+            <h2>Submit Water Quality Report</h2>
+             <p>Please ensure your report is comprehensive and includes location details, date/time of sampling, parameters tested, results, and photographic evidence if possible. Upload your report (PDF, DOCX) to a cloud storage service (like Google Drive, Dropbox) and share the link below.</p>
+             <form id="report-form">
+                 <label for="report-link">Report Link (Google Drive, Dropbox, etc.):</label>
+                 <input type="url" id="report-link" name="report-link" required placeholder="Paste your shareable report link here">
+                 <label for="additional-info">Additional Information (Optional):</label>
+                 <textarea id="additional-info" name="additional-info" rows="4" placeholder="Any context or specific observations..."></textarea>
+                 <button type="submit" class="btn btn-success">Submit Report Link</button>
+             </form>
+        </section>
+
+
+        <!-- Warning Section -->
+        <section id="warning" class="content-section warning-section">
+            <h2><i class="fas fa-exclamation-triangle"></i> Important Notice: Accuracy is Paramount</h2>
+            <p>Submitting false or misleading information regarding water quality reports is a serious offense. Such actions undermine the collective effort to clean the Ganga and can misdirect valuable resources.</p>
+            <p><strong>Consequences of misinformation may include:</strong></p>
+            <ul>
+                <li>Heavy fines as per government regulations.</li>
+                <li>Denial of access to government schemes and benefits.</li>
+                <li>Potential legal action.</li>
+            </ul>
+            <p>Please ensure all submitted data is accurate and verifiable. Let's work together with integrity.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a> |
+                <a href="#contact">Contact Us (Simulated)</a>
+            </div>
+            <p>© 2023 Ganga Water Quality Mediator Initiative. All Rights Reserved.</p>
+             <p>A Namami Gange Project Contribution</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal (Simulated) -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h2>Sign In</h2>
+            <form id="login-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <p>Don't have an account? <a href="#signup" id="show-signup">Sign Up (Simulated)</a></p>
+                 <p><small>Demo: Any email/password will work.</small></p>
+            </form>
+        </div>
+    </div>
+
+     <!-- Sign Up Modal (Simulated) -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <label for="signup-name">Full Name:</label>
+                <input type="text" id="signup-name" name="signup-name" required>
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="signup-email" required>
+                 <label for="signup-type">Account Type:</label>
+                 <select id="signup-type" name="signup-type">
+                    <option value="local">Local Resident</option>
+                    <option value="org">Local Organization/Tester</option>
+                 </select>
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="signup-password" required>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <p>Already have an account? <a href="#login" id="show-login">Sign In</a></p>
+                <p><small>Demo: This is a simulation.</small></p>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="project.js"></script>
+</body>
+</html>

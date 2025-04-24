@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Ganga Mediator</title>
+    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+         <nav>
+            <div class="logo">
+                <img src="images/logo.png" >
+                <span>Project Ganga</span>
+            </div>
+            <ul class="nav-links">
+                 <li><a href="index.html">Home</a></li>
+                 <li><a href="index.html#about">About the Mission</a></li>
+                 <li><a href="index.html#then-now">Then vs Now</a></li>
+                 <li><a href="index.html#organizations">Organizations</a></li>
+                 <li><a href="contri.html">Our Contribution</a></li>
+                 <li><a href="assi.html">Project Assignments</a></li>
+            </ul>
+             <div class="auth-buttons">
+                 <!-- Logged in state shown by default on profile page -->
+                 <a href="profile.html" id="profile-link" class="btn btn-secondary">Profile</a>
+             </div>
+              <div class="menu-toggle" id="mobile-menu">
+                 <i class="fas fa-bars"></i>
+              </div>
+         </nav>
+    </header>
+
+    <main>
+        <section class="content-section profile-section">
+            <h2>Your Profile</h2>
+            <div id="profile-details">
+                <!-- Profile details will be loaded by JavaScript -->
+                 <p>Loading profile...</p>
+            </div>
+
+            <div id="profile-actions">
+                 <h3>Your Actions</h3>
+                 <!-- Show different actions based on user type (loaded by JS) -->
+                 <div id="org-actions" style="display: none;">
+                     <p>As a registered Organization/Tester, you can submit reports:</p>
+                     <a href="index.html#submit-report-section" class="btn btn-success">Submit New Report</a>
+                     <p><a href="#">View Past Submissions (Simulated)</a></p>
+                 </div>
+                 <div id="local-actions" style="display: none;">
+                      <p>Thank you for being part of the mission!</p>
+                      <p><a href="index.html#then-now">See the Progress</a></p>
+                 </div>
+                 <button id="edit-profile-btn" class="btn btn-secondary">Edit Profile (Simulated)</button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+             <div class="social-media">
+                 <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                 <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                 <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+             </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a> |
+                <a href="#contact">Contact Us (Simulated)</a>
+            </div>
+            <p>© 2023 Ganga Water Quality Mediator Initiative. All Rights Reserved.</p>
+             <p>A Namami Gange Project Contribution</p>
+        </div>
+    </footer>
+
+     <!-- Include script.js, it handles profile loading and logout -->
+     <script src="project.js"></script>
+</body>
+</html>

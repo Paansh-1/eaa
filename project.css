@@ -1,0 +1,592 @@
+/* --- Global Styles --- */
+:root {
+    --primary-color: #0077cc; /* A trustworthy blue */
+    --secondary-color: #f0ad4e; /* Warm accent */
+    --success-color: #5cb85c; /* Green for success/environment */
+    --light-bg: #f8f9fa;
+    --dark-text: #333;
+    --light-text: #fff;
+    --border-color: #ddd;
+    --navbar-height: 70px;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--dark-text);
+    padding-top: var(--navbar-height); /* Prevent content overlap */
+    background-color: #eef2f3; /* Light grey/blue background */
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.8rem; color: var(--light-text); }
+h2 { font-size: 2.2rem; color: var(--primary-color); }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container { /* Optional: Use if needed for centering content */
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.content-section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: var(--light-text);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-section.bg-light {
+    background-color: var(--light-bg);
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin: 5px;
+    text-decoration: none !important; /* Override link underline */
+    color: var(--light-text) !important; /* Ensure text is light */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: #005fa3;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--dark-text) !important;
+}
+.btn-secondary:hover {
+    background-color: #ec971f;
+}
+
+.btn-success {
+    background-color: var(--success-color);
+}
+.btn-success:hover {
+    background-color: #4cae4c;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color) !important;
+}
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text) !important;
+}
+
+/* Sticky Buttons Specific Styling */
+.sticky-buttons-container {
+    position: fixed; /* Stick to the viewport */
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure they are above other content */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+}
+
+.btn-sticky {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+/* --- Navbar --- */
+header {
+    background-color: var(--light-text);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Make navbar sticky */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100; /* Above sticky buttons */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: var(--navbar-height);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    padding: 0 15px;
+}
+
+.nav-links a {
+    color: var(--dark-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.auth-buttons .btn {
+    margin-left: 10px;
+}
+
+/* Mobile Menu Styles */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+
+/* --- Hero Section --- */
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/ganga_hero.jpg') no-repeat center center/cover;
+    height: calc(100vh - var(--navbar-height)); /* Full viewport height minus navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text);
+    position: relative;
+    background-image: url("OIP\ \(3\).jpeg"); 
+    background-repeat: no-repeat;
+    background-size: 100% 100%;/* Needed for potential pseudo-elements or absolute positioning inside */
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1rem; /* Reduced margin */
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem; /* Spacing before sticky buttons */
+}
+
+/* --- Then vs Now Slider --- */
+.slider-container {
+    position: relative;
+    width: 90%; /* Adjust as needed */
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative; /* For caption positioning */
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+}
+
+.slide .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--light-text);
+    padding: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 100;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+.slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+/* --- Warning Section --- */
+.warning-section {
+    background-color: #fff3cd; /* Light yellow */
+    border-left: 5px solid #ffeeba; /* Yellow border */
+    color: #856404; /* Dark yellow text */
+    padding: 30px 20px;
+}
+.warning-section h2 {
+    color: #856404;
+}
+.warning-section i {
+    margin-right: 10px;
+}
+.warning-section ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #333;
+    color: var(--light-text);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.social-media a {
+    color: var(--light-text);
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+.social-media a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.footer-links {
+    margin: 15px 0;
+}
+
+.footer-links a {
+    color: #ccc;
+    margin: 0 10px;
+}
+.footer-links a:hover {
+    color: var(--light-text);
+}
+
+/* --- Modals --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1200; /* Above everything else */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* Dim background */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Centered vertically and horizontally */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px; /* Max width */
+    border-radius: 8px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.modal h2 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal form input[type="text"],
+.modal form input[type="email"],
+.modal form input[type="password"],
+.modal form input[type="url"],
+.modal form select,
+.modal form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.modal form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+}
+.modal form p {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- Profile Page --- */
+.profile-section #profile-details {
+    background-color: var(--light-bg);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+}
+.profile-section #profile-details p { margin-bottom: 8px; }
+.profile-section #profile-details strong { margin-right: 5px; }
+
+/* --- Contributions Page --- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.team-member {
+    text-align: center;
+    background-color: var(--light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px auto;
+    border: 3px solid var(--border-color);
+}
+
+.team-member h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+.team-member p {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+/* --- Assignments Page --- */
+.assignments-list {
+    list-style: none; /* Use custom styling maybe */
+    padding-left: 0;
+}
+.assignments-list li {
+    background-color: var(--light-bg);
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border-left: 4px solid var(--secondary-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.assignments-list strong {
+    color: var(--primary-color);
+}
+
+/* --- Report Form --- */
+#report-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+#report-form input[type="url"],
+#report-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+#report-form button {
+    margin-top: 10px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+
+    .menu-toggle {
+        display: block; /* Show hamburger */
+    }
+
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        position: absolute;
+        top: var(--navbar-height);
+        left: 0;
+        background-color: white;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding-bottom: 10px; /* Spacing at bottom */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active class is added */
+    }
+
+    .nav-links li {
+        padding: 10px 20px;
+        text-align: center;
+        border-top: 1px solid var(--border-color); /* Separator */
+    }
+    .nav-links li:first-child {
+        border-top: none;
+    }
+
+
+    .auth-buttons {
+        /* Adjust if needed, maybe move inside mobile menu too */
+        margin-left: auto; /* Push auth buttons right before hamburger */
+        padding-right: 10px; /* Space before hamburger */
+    }
+
+    /* Hide auth buttons if menu is open and they are part of it instead*/
+     /* nav.mobile-nav-active .auth-buttons {
+         display: none;  If you move auth buttons inside the slide-down menu 
+     } */
+
+
+    #hero {
+        height: auto; /* Adjust height */
+        min-height: 70vh;
+        padding-top: 40px; /* Add padding for content */
+        padding-bottom: 80px; /* Space above fixed buttons */
+    }
+
+    .sticky-buttons-container {
+       /* Keep fixed positioning */
+       right: 10px;
+       bottom: 10px;
+    }
+     .btn-sticky {
+         padding: 8px 15px;
+         font-size: 0.9rem;
+     }
+
+    .content-section {
+        padding: 40px 15px;
+    }
+
+    .slider-container {
+        width: 100%;
+    }
+    .modal-content {
+        width: 90%;
+        margin: 15% auto;
+    }
+}
