@@ -4,23 +4,34 @@
   <meta charset="UTF-8">
   <title>Ganga Water Quality Over Years</title>
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 90vw;
+      height: 90vh;
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
       background: #f0f8ff;
     }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+
     h2 {
       color: #006699;
+      margin-bottom: 20px;
     }
-    canvas {
-   canvas {
-  width: 80%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
 
+    canvas {
+      width: 100% !important;
+      height: 100% !important;
+      max-width: 1000px;
+      max-height: 500px;
     }
   </style>
 </head>
@@ -44,7 +55,8 @@
             borderColor: '#f39c12',
             backgroundColor: 'rgba(243, 156, 18, 0.1)',
             fill: true,
-            tension: 0.3
+            tension: 0.3,
+            yAxisID: 'y1'
           },
           {
             label: 'Dissolved Oxygen (mg/L)',
@@ -86,11 +98,27 @@
         },
         scales: {
           y: {
+            beginAtZero: false,
             title: {
               display: true,
-              text: 'Measurement Units'
+              text: 'mg/L'
+            }
+          },
+          y1: {
+            type: 'linear',
+            position: 'right',
+            min: 6.9,
+            max: 7.5,
+            ticks: {
+              stepSize: 0.1
             },
-            beginAtZero: false
+            title: {
+              display: true,
+              text: 'pH Level'
+            },
+            grid: {
+              drawOnChartArea: false
+            }
           }
         }
       }
