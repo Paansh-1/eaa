@@ -1,129 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Ganga Water Quality Over Years</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 90vw;
-      height: 90vh;
-      font-family: Arial, sans-serif;
-      background: #f0f8ff;
-    }
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f0f8ff;
+  }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-sizing: border-box;
-      padding: 20px;
-    }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px;
+  }
 
-    h2 {
-      color: #006699;
-      margin-bottom: 20px;
-    }
+  h2 {
+    color: #006699;
+    margin-bottom: 20px;
+  }
 
-    canvas {
-      width: 100% !important;
-      height: 100% !important;
-      max-width: 1000px;
-      max-height: 500px;
-    }
-  </style>
-</head>
-<body>
-  <h2>Ganga Water Quality (2018–2024)</h2>
-  <canvas id="gangaChart"></canvas>
-
-  <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    const ctx = document.getElementById('gangaChart').getContext('2d');
-
-    const gangaChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024'],
-        datasets: [
-          {
-            label: 'pH Level',
-            data: [6.8, 7.0, 7.2, 7.3, 7.4, 7.1, 7.3],
-            borderColor: '#f39c12',
-            backgroundColor: 'rgba(243, 156, 18, 0.1)',
-            fill: true,
-            tension: 0.3,
-            yAxisID: 'y1'
-          },
-          {
-            label: 'Dissolved Oxygen (mg/L)',
-            data: [5.2, 5.8, 6.5, 6.9, 7.1, 7.3, 7.4],
-            borderColor: '#27ae60',
-            backgroundColor: 'rgba(39, 174, 96, 0.1)',
-            fill: true,
-            tension: 0.3
-          },
-          {
-            label: 'BOD (mg/L)',
-            data: [4.8, 4.2, 3.6, 3.2, 2.9, 2.5, 2.3],
-            borderColor: '#c0392b',
-            backgroundColor: 'rgba(192, 57, 43, 0.1)',
-            fill: true,
-            tension: 0.3
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          tooltip: {
-            mode: 'index',
-            intersect: false,
-          },
-          legend: {
-            position: 'top'
-          },
-          title: {
-            display: true,
-            text: 'Water Quality Parameters in River Ganga (2018–2024)'
-          }
-        },
-        interaction: {
-          mode: 'nearest',
-          axis: 'x',
-          intersect: false
-        },
-        scales: {
-          y: {
-            beginAtZero: false,
-            title: {
-              display: true,
-              text: 'mg/L'
-            }
-          },
-          y1: {
-            type: 'linear',
-            position: 'right',
-            min: 6.9,
-            max: 7.5,
-            ticks: {
-              stepSize: 0.1
-            },
-            title: {
-              display: true,
-              text: 'pH Level'
-            },
-            grid: {
-              drawOnChartArea: false
-            }
-          }
-        }
-      }
-    });
-  </script>
-</body>
-</html>
+  canvas {
+    width: 100vw !important;
+    height: 70vh !important;
+    max-width: none;
+    max-height: none;
+  }
+</style>
 
